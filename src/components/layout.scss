@@ -5,6 +5,71 @@ html {
 }
 body {
   margin: 0;
+}
+
+a,
+a:link,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tab-bar {
+  margin: 20px 0;
+  border-bottom: 1px solid gainsboro;
+  font-family: "Rubik", sans-serif;
+  height: 59px;
+
+  button {
+    border: none;
+    padding: 20px 35px;
+    margin-right: 10px;
+  }
+  button:hover {
+    border-bottom: 2px solid gainsboro;
+  }
+  button:focus {
+    outline: none !important;
+  }
+  .active,
+  .active:hover {
+    font-weight: 600;
+    border-bottom: 2px solid #e36209;
+  }
+}
+
+.overview-projects {
+  display: flex;
+  flex-wrap: wrap;
+
+  .overview-project-card {
+    flex: 1 1 40%;
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
+    margin: 8px;
+    padding: 16px;
+
+    &-title {
+      font-weight: 600;
+    }
+  }
+  .ui.card {
+    margin: 0;
+  }
+}
+
+/* html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -619,4 +684,4 @@ pre tt:after {
   html {
     font-size: 100%;
   }
-}
+} */

@@ -1,0 +1,16 @@
+.overview-project {
+  display: flex;
+  flex-wrap: wrap;
+
+  .overview-project-card {
+    flex: 1 1 40%;
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
+    margin: 8px;
+    padding: 16px;
+
+    &-title {
+      font-weight: 600;
+    }
+  }
+}
