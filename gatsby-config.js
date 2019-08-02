@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Daniel Khoo`,
-    description: `A blog, portfolio and digital garage for all my work, side-projects, procrastinations from work.`
+    description: `A blog, portfolio and digital garage for all my work, side-projects, procrastinations from work.`,
+    author: `@danieljkhoo`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -35,9 +36,15 @@ module.exports = {
           include: /\.svg$/
         }
       }
-    }
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    },
+    // Markdown support plugins
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown`,
+        path: `${__dirname}/src/markdown`
+      }
+    },
+    `gatsby-transformer-remark`
   ]
 };
