@@ -1,9 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "blog",
+  "description": "Personal Blog - Gatsby",
+  "version": "1.0.0",
+  "author": "Daniel Khoo",
   "dependencies": {
     "gatsby": "^2.13.39",
     "gatsby-image": "^2.2.6",
@@ -33,6 +32,7 @@
   ],
   "license": "MIT",
   "scripts": {
+    "deploy": "gatsby build && cd public && git add . && git commit -m 'deploy' && git push",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
@@ -42,9 +42,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/danielkhoo/danielkhoo.github.io"
   }
 }
