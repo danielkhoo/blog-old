@@ -14,3 +14,34 @@
     }
   }
 }
+
+.overview-blog {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  .overview-blog-card {
+    flex: 1 1 40%;
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
+    margin: 8px;
+
+    &-header {
+      border-bottom: 1px solid #d1d5da;
+      padding: 5px 15px;
+      font-size: 12px;
+      span {
+        font-weight: 600;
+      }
+    }
+
+    &-content {
+      padding: 16px;
+      .title {
+        margin: 5px 0 15px;
+      }
+      .description {
+      }
+    }
+  }
+}

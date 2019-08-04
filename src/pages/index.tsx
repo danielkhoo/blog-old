@@ -1,22 +1,55 @@
 import React from "react"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import HelloWorld from './posts/HelloWorld';
 import './index.scss'
-const IndexPage = () => {
+import OverviewBlogCard from '../components/Overview/OverviewBlogCard';
+export interface IPost {
+  path: string,
+  date: string,
+  title: string,
+  description: string
+}
+const IndexPage = ({ data }) => {
+  const { edges } = data.allMarkdownRemark; // data.allMarkdownRemark.edges holds our post data
+  const posts: IPost[] = edges.map((edge) => {
+    return edge.node.frontmatter as IPost
+  })
+  console.log(posts);
+
   return (
     <Layout>
-
       <SEO title="Home" />
-      <div className='blog'>
-        <HelloWorld
-          key='Hello World'
-          title={'Hello World'}
-          href={'/posts/hello-world'}
-          description={'GPS-based Multiplayer Android Game'}
-          date='28 / 07 / 2018' />
+      <div className='overview-blog'>
+        {posts.map((post) =>
+          <OverviewBlogCard
+            title={post.title}
+            path={post.path}
+            date={post.date}
+            description={post.description}
+          />
+        )}
       </div>
     </Layout>
   )
 }
+
+export const query = graphql`
+  query {
+      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, limit: 1000) {
+        edges {
+          node {
+            frontmatter {
+              path
+              date
+              title
+              description
+            }
+          }
+        }
+      }
+  }
+`
+
 export default IndexPage
