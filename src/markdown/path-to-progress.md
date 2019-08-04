@@ -2,7 +2,7 @@
 path: '/blog/path-to-progress'
 date: '2019-08-04'
 title: 'Path to progress'
-description: 'This blog was inspired by a great piece from swyx. It really got me thinking about my learning process as a developer. I actively consume content on twitter and dev blogs but never really felt like I was qualified to create.'
+description: "This has evolved into a great excuse to learn a bunch of new stuff like Gatsby and JAMStack. So in no real order of priority, cause I'll change my mind anyway, here's the stuff I hope to learn/do in the next 6 months"
 ---
 
 This has evolved into a great excuse to learn a bunch of new stuff like Gatsby and JAMStack. I am also dabbling in LeetCode challenges which are always mindblowing, forcing you to consider weird edge cases.
