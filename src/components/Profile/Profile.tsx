@@ -8,11 +8,11 @@ const Profile: React.SFC = (): JSX.Element => (
   <div className='profile'>
     <div className='side-card'>
       <img
-        width='260'
-        height='260'
+        width='220'
+        height='220'
         className='profile-pic'
         src='https://github.com/danielkhoo.png'
-        alt='Daniel Khoo'
+        alt=''
       />
       <div>
         <h1>Daniel Khoo</h1>
