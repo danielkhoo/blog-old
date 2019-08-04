@@ -1,7 +1,8 @@
 ---
-path: '/blog/learn-in-public'
+path: '/blog/path-to-progress'
 date: '2019-08-01'
-title: 'Learn in public'
+title: 'Path to progress'
+description: 'This blog was inspired by a great piece from swyx. It really got me thinking about my learning process as a developer. I actively consume content on twitter and dev blogs but never really felt like I was qualified to create.'
 ---
 
 This blog was inspired by a great piece from swyx, [Learn In Public](https://www.swyx.io/writing/learn-in-public/). It really got me thinking about my learning process as a developer. I actively consume content on twitter and dev blogs but never really felt like I was qualified to create.
