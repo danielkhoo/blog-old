@@ -1,9 +1,12 @@
 import React from 'react';
-
+import calendarSVG from '../../images/calendar.svg';
+import bookSVG from '../../images/book.svg';
+import Icon from '../Icon';
 export interface IProps {
   title: string;
   href: string;
   description: string;
+  dotColor: string;
   tags: string[];
   year?: string;
 }
@@ -14,12 +17,27 @@ const OverviewProjectCard: React.SFC<IProps> = (props: IProps) => (
       {props.title}
     </a>
     <p>{props.description}</p>
-    <div>
-      {props.tags.map((tag, index) => {
-        return <span key={index}>{tag}</span>
-      })}
+    <div className='overview-project-card-content'>
+      <div className='tags'>
+        <span className="language-color tag-icon" style={{ backgroundColor: props.dotColor }}></span>
+        <span>{props.tags[0]}</span>
 
-      <span>{props.year}</span>
+      </div>
+
+      <div className='tags'>
+        <span className='tag-icon'>
+          <Icon width={12} height={16} SVG={bookSVG} />
+        </span>
+        <span>{props.tags[1]}</span>
+      </div>
+
+      <div className='tags'>
+        <span className='tag-icon'>
+          <Icon width={14} height={16} SVG={calendarSVG} />
+        </span>
+        <span>{props.year}</span>
+      </div>
+
     </div>
   </div>
 );
