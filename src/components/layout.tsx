@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
+import * as React from 'react'
 import { Link } from "gatsby"
 import "./layout.scss"
 import './Overview/Overview.scss';
@@ -8,7 +9,12 @@ enum ActiveTab {
   Blog = 'blog',
   Projects = 'projects'
 }
-const Layout = ({ children }) => {
+
+export interface IProps extends React.Props<{}> {
+  showSideBar: boolean;
+}
+
+const Layout = (props: IProps): JSX.Element => {
   const [activeTab, setTab] = useState(ActiveTab.Blog)
 
 
@@ -20,20 +26,16 @@ const Layout = ({ children }) => {
   return (
     <>
       <div className="container">
-        <Grid container={true} columns={16}>
-          <GridColumn mobile={16} tablet={6} computer={5}>
-            <div className="sidebar">
-              <Profile />
-            </div>
-          </GridColumn>
-          <GridColumn mobile={16} tablet={10} computer={11}>
-            <div className='tab-bar'>
-              <Link to='/'><button className={activeTab === ActiveTab.Blog ? 'active' : ''}> Blog</button></Link>
-              <Link to='/projects'><button className={activeTab === ActiveTab.Projects ? 'active' : ''}> Projects</button></Link>
-            </div>
-            {children}
-          </GridColumn>
-        </Grid>
+        <div className="sidebar-wrapper">
+          <Profile />
+        </div>
+        <div className="main-wrapper">
+          <div className='tab-bar'>
+            <Link to='/'><button className={activeTab === ActiveTab.Blog ? 'active' : ''}> Blog</button></Link>
+            <Link to='/projects'><button className={activeTab === ActiveTab.Projects ? 'active' : ''}> Projects</button></Link>
+          </div>
+          {props.children}
+        </div>
       </div>
     </>
   )

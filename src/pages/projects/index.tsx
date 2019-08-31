@@ -6,7 +6,7 @@ import OverviewProjectCard from '../../components/Overview/OverviewProjectCard';
 
 
 const IndexPage: React.SFC = () => (
-  <Layout>
+  <Layout showSideBar={true}>
     <SEO title="Projects" />
     <div className='overview-projects'>
       <OverviewProjectCard

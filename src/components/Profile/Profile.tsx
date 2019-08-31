@@ -1,5 +1,7 @@
 import React from 'react';
+// @ts-ignore: SVG Import
 import githubSVG from '../../images/github.svg';
+// @ts-ignore: SVG Import
 import linkedinSvg from '../../images/linkedin.svg';
 import Icon from '../Icon';
 import './Profile.scss';

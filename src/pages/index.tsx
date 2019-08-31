@@ -19,7 +19,7 @@ const IndexPage = ({ data }) => {
   console.log(posts);
 
   return (
-    <Layout>
+    <Layout showSideBar={true}>
       <SEO title="Home" />
       <div className='overview-blog'>
         {posts.map((post) =>
