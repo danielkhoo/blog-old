@@ -5,7 +5,7 @@ title: 'Technical Interview Algorithm Reference Javascript'
 description: 'Quick reference for data structures and algorithms for technical assessments Leetcode/HackerRank/HackerEarth/etc. Javascript cause there are a million Java ones which my brain struggles to grok.'
 ---
 
-Quick reference for data structures and algorithms for technical assessments Leetcode/HackerRank/HackerEarth/etc. Javascript cause there are a million Java ones which my brain struggles to grok.
+Quick reference for data structures and algorithms for technical assessments Leetcode/HackerRank/HackerEarth/etc. Javascript cause there are a million Java ones which my brain struggles to grok. Hope it helps others too.
 
 ## Built-in functions
 
