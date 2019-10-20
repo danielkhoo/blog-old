@@ -2,7 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import HelloWorld from './posts/HelloWorld';
 import './index.scss'
 import OverviewBlogCard from '../components/Overview/OverviewBlogCard';
 export interface IPost {
@@ -16,7 +15,6 @@ const IndexPage = ({ data }) => {
   const posts: IPost[] = edges.map((edge) => {
     return edge.node.frontmatter as IPost
   })
-  console.log(posts);
 
   return (
     <Layout showSideBar={true}>

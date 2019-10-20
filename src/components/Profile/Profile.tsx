@@ -20,8 +20,8 @@ const Profile: React.SFC = (): JSX.Element => (
         <h1>Daniel Khoo</h1>
         <h2>Software Engineer</h2>
       </div>
-      <p>A blog, portfolio and digital garage for all my work, side-projects, procrastinations from work.</p>
-      <i>"The most creative work is done while avoiding other work" <br />- Some guy on twitter</i>
+      <p>Hello there! Welcome to my blog/portfolio/storeroom for work, side-projects and procrastinations.</p>
+      <i>"The most creative work is done while avoiding other work"</i>
 
     </div>
     <div className='side-card'>

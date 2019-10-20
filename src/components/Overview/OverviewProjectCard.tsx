@@ -9,6 +9,7 @@ export interface IProps {
   dotColor: string;
   tags: string[];
   year?: string;
+  shield?: string;
 }
 
 const OverviewProjectCard: React.SFC<IProps> = (props: IProps) => (
@@ -16,7 +17,11 @@ const OverviewProjectCard: React.SFC<IProps> = (props: IProps) => (
     <a className='overview-project-card-title' href={props.href}>
       {props.title}
     </a>
+    <div className='overview-project-card-shields'>
+      {props.shield && <img src={props.shield} />}
+    </div>
     <p>{props.description}</p>
+
     <div className='overview-project-card-content'>
       <div className='tags'>
         <span className="language-color tag-icon" style={{ backgroundColor: props.dotColor }}></span>
@@ -30,6 +35,7 @@ const OverviewProjectCard: React.SFC<IProps> = (props: IProps) => (
         </span>
         <span>{props.tags[1]}</span>
       </div>
+
 
       <div className='tags'>
         <span className='tag-icon'>

@@ -15,7 +15,9 @@ const IndexPage: React.SFC = () => (
         description={'An npm library for generating and validating Singapore NRIC numbers'}
         dotColor={'#f1e05a'}
         tags={['Javascript', 'NPM']}
-        year='2019' />
+        year='2019'
+        shield={'https://img.shields.io/npm/dw/nric?label=npm%20downloads&style=flat-square'}
+      />
       <OverviewProjectCard
         title={'Graduate Employment Visualisation'}
         href={'https://danielkhoo.github.io/ges'}
