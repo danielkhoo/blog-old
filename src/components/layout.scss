@@ -14,22 +14,64 @@ a:hover,
 a:active {
   text-decoration: none;
 }
+header {
+  background-color: #20232a;
+  color: #ffffff;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  left: 0;
 
+  .header-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    height: 50px;
+    flex-direction: row;
+
+    .logo {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      font-weight: 600;
+      font-size: 16px;
+      color: #61dafb;
+      margin-right: 20px;
+    }
+    nav {
+      display: flex;
+      .navitem {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        font-size: 16px;
+        color: white;
+        text-decoration: none;
+        padding: 0 20px;
+      }
+      .navitem.active {
+        color: #61dafb;
+        border-bottom: 2px solid #61dafb;
+      }
+    }
+  }
+}
 .container {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 70px auto 0;
   display: flex;
   flex-direction: column-reverse;
   padding: 0 20px;
 
   @include medium {
     flex-direction: row;
-    padding: 0;
   }
 
   .sidebar-wrapper {
     flex: 1;
-    margin: 0 20px;
+    margin-right: 20px;
     display: flex;
     justify-content: center;
     @include medium {
