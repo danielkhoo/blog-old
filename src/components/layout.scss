@@ -29,7 +29,7 @@ a:active {
 
   .sidebar-wrapper {
     flex: 1;
-    margin-right: 20px;
+    margin: 0 20px;
     display: flex;
     justify-content: center;
     @include medium {
@@ -49,6 +49,8 @@ a:active {
 
   button {
     border: none;
+    text-decoration: none;
+    background: none;
     padding: 20px 35px;
     margin-right: 10px;
   }

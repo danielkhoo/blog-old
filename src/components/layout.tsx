@@ -26,9 +26,9 @@ const Layout = (props: IProps): JSX.Element => {
   return (
     <>
       <div className="container">
-        <div className="sidebar-wrapper">
+        {props.showSideBar && <div className="sidebar-wrapper">
           <Profile />
-        </div>
+        </div>}
         <div className="main-wrapper">
           <div className='tab-bar'>
             <Link to='/'><button className={activeTab === ActiveTab.Blog ? 'active' : ''}> Blog</button></Link>
