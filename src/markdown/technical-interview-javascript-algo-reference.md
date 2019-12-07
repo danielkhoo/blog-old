@@ -5,7 +5,93 @@ title: 'Technical Interview Algorithm Reference Javascript'
 description: 'Quick reference for data structures and algorithms for technical assessments Leetcode/HackerRank/HackerEarth/etc. Javascript cause there are a million Java ones which my brain struggles to grok.'
 ---
 
-Quick reference for data structures and algorithms for technical assessments Leetcode/HackerRank/HackerEarth/etc. Javascript cause there are a million Java ones which my brain struggles to grok. Hope it helps others too.
+Quick reference for data structures and algorithms for technical assessments Leetcode/HackerRank/HackerEarth/etc. Javascript cause there are a million Java ones which my brain struggles to grok.
+
+## Big O Time Space / Complexity
+
+### Sorting
+
+| Algo           | Time Complexity (Worst) | Space Complexity |
+| -------------- | :---------------------: | ---------------: |
+| QuickSort      |           n^2           |           log(n) |
+| MergeSort      |         n log n         |                n |
+| Bubble Sort    |           n^2           |                1 |
+| Insertion Sort |           n^2           |                1 |
+| Selection Sort |           n^2           |                1 |
+
+### Data Structures (Worst)
+
+| Algo        | Access |    Search | Insertion |  Deletion | Space Complexity |
+| ----------- | :----: | --------: | --------: | --------: | ---------------: |
+| Array       |   1    |         n |         n |         n |                n |
+| HashTable   |  n/a   | n (avg 1) | n (avg 1) | n (avg 1) |                n |
+| Stack       |   n    |         n |         1 |         1 |                n |
+| Queue       |   n    |         n |         1 |         1 |                n |
+| Linked-List |   n    |         n |         1 |         1 |                n |
+
+## Sorts
+
+### Bubble Sort
+
+```javascript
+function bubblesort(input) {
+  let sorted = false;
+  while (sorted === false) {
+    sorted = true;
+    let i = 0;
+    let j = 1;
+    while (j < input.length) {
+      if (input[i] > input[j]) {
+        [input[i], input[j]] = [input[j], input[i]];
+        sorted = false;
+      }
+      i++;
+      j++;
+    }
+  }
+  return input;
+}
+```
+
+### Selection Sort
+
+```javascript
+function selectionSort(input) {
+  for (let i = 0; i < input.length; i++) {
+    const subArr = input.slice(i); //Slice subArr of unsorted
+
+    //Loop to find index of min item
+    let minIndex = 0;
+    for (let j = 1; j < subArr.length; j++) {
+      if (subArr[j] < subArr[minIndex]) minIndex = j;
+    }
+
+    //If min not at start, swap min with item at start of subArr
+    if (minIndex > 0) {
+      [input[i], input[i + minIndex]] = [input[i + minIndex], input[i]];
+    }
+  }
+  return input;
+}
+```
+
+### Insertion Sort
+
+```javascript
+function insertionSort(input) {
+  for (let i = 0; i < input.length; i++) {
+    const element = input[i];
+    //Loop from end of sorted to 0
+    let j;
+    for (j = i - 1; j >= 0; j--) {
+      if (input[j] < element) break;
+      input[j + 1] = input[j]; //Move items to the right
+    }
+    input[j + 1] = element; //Insert item into space
+  }
+  return input;
+}
+```
 
 ## Built-in functions
 
@@ -62,30 +148,6 @@ const arr = array.filter(val => val > 0);
 array.find(val => val > 0);
 ```
 
-## Sorts
-
-### Bubble Sort
-
-```javascript
-function bubblesort(input) {
-  let sorted = false;
-  while (sorted === false) {
-    sorted = true;
-    let i = 0;
-    let j = 1;
-    while (j < input.length) {
-      if (input[i] > input[j]) {
-        [input[i], input[j]] = [input[j], input[i]];
-        sorted = false;
-      }
-      i++;
-      j++;
-    }
-  }
-  return input;
-}
-```
-
 ## Common Questions
 
 ### Sieve of Eratosthenes (Generate Primes)
@@ -134,31 +196,417 @@ function overlap(l1, l2) {
 }
 ```
 
+### 2 Array Merge Unique Values
+
+```javascript
+function mergeArrUniqueValues(l1, l2) {
+  let res = l1.concat(l2).sort();
+
+  let i = 0;
+  let j = 1;
+  while (j < res.length) {
+    if (res[i] == res[j]) {
+      res[i] = undefined;
+    }
+    i++;
+    j++;
+  }
+
+  return res.filter(val => val !== undefined);
+}
+```
+
+### Google - Watering Plants
+
+```javascript
+function waterPlants(plants, capacity1, capacity2) {
+  let i = 0;
+  let j = plants.length - 1;
+  let refillCount = 0;
+  let watercan1 = 0;
+  let watercan2 = 0;
+  while (i <= j) {
+    if (i == j) {
+      if (watercan1 + watercan2 < plants[i]) {
+        refillCount++;
+      }
+      break;
+    }
+    if (watercan1 < plants[i]) {
+      watercan1 = capacity1;
+      refillCount++;
+    }
+    watercan1 -= plants[i];
+
+    if (watercan2 < plants[j]) {
+      watercan2 = capacity2;
+      refillCount++;
+    }
+    watercan2 -= plants[j];
+
+    i++;
+    j--;
+  }
+  return refillCount;
+}
+```
+
+### Google - Rotate Dominoes
+
+```javascript
+function minDominoRotations(A, B) {
+  let valid = [];
+  let candidates = {};
+  candidates[A[0]] = 1;
+  candidates[B[0]] = 1;
+  for (let i = 1; i < A.length; i++) {
+    if (candidates[A[i]] == i) {
+      candidates[A[i]] += 1;
+    }
+    if (candidates[B[i]] == i) {
+      candidates[B[i]] += 1;
+    }
+  }
+
+  Object.keys(candidates).forEach(key => {
+    if (candidates[key] == A.length) valid.push(key);
+  });
+
+  if (valid.length == 0) {
+    return -1;
+  }
+  let swapCount1 = 0;
+  let val1 = valid[0];
+  for (let j = 0; j < A.length; j++) {
+    if (A[j] != val1) swapCount1++;
+  }
+
+  let swapCount2 = 0;
+  for (let j = 0; j < A.length; j++) {
+    if (B[j] != val1) swapCount2++;
+  }
+
+  return swapCount1 > swapCount2 ? swapCount2 : swapCount1;
+}
+```
+
 ### 3sum
 
 ```javascript
 function threeSum(input) {
-  let searchHashmap = {};
-  let resHashmap = {};
-  for (let i = 0; i < input.length; i++) {
-    for (let j = 0; j < input.length; j++) {
-      if (i == j) {
-        continue;
+  nums.sort();
+  let res = [];
+  let map = new Map();
+
+  for (let i = 0; i < nums.length; i++) {
+    map.set(nums[i], i);
+  }
+  for (let i = 0; i < nums.length; i++) {
+    if (i > 0 && nums[i] == nums[i - 1]) continue;
+
+    for (let j = i + 1; j < nums.length; j++) {
+      if (j > i + 1 && nums[j] == nums[j - 1]) continue;
+
+      const diff = 0 - (nums[i] + nums[j]);
+      if (map.has(diff) && map.get(diff) > j) {
+        res.push([nums[i], nums[j], diff]);
       }
-      //searchhashmap key is value needed for sum to be 0
-      let temp = 0 - input[i] - input[j];
-      //Check if index j matches previously saved hashes
-      if (searchHashmap[input[j]]) {
-        const [indexI, indexJ] = searchHashmap[input[j]];
-        if (j != indexI && j != indexJ) {
-          //Sort arr of 3 nums and use as key to prevent duplicates
-          const arr = [input[j], input[indexI], input[indexJ]].sort((a, b) => a - b);
-          resHashmap[arr] = arr;
-        }
-      }
-      searchHashmap[temp] = [i, j];
     }
   }
-  return Object.values(resHashmap);
+  return res;
+}
+```
+
+### Find Longest Palindrome
+
+```javascript
+function longestPalindrome(s) {
+  let res = '';
+  function findPalindrome(l, r) {
+    while (l > -1 && r < s.length) {
+      if (s[l] != s[r]) break;
+      l--;
+      r++;
+    }
+    l++;
+    r--;
+    const word = s.slice(l, r + 1);
+    if (word.length > res.length) res = word;
+  }
+  for (let i = 0; i < s.length; i++) {
+    if (i > 0 && s[i - 1] == s[i]) findPalindrome(i - 1, i);
+    findPalindrome(i, i);
+  }
+  return res;
+}
+```
+
+### Reverse Linked List
+
+```javascript
+function reverseLinkedList(head) {
+  let curr = head;
+  let prev = null;
+  while (curr != null) {
+    const nextTemp = curr.next;
+    curr.next = prev;
+    prev = curr;
+    curr = nextTemp;
+  }
+  return prev;
+}
+```
+
+### Reverse Linked List Between Indices
+
+```javascript
+function reverseLinkedListBetween(head, m, n) {
+  let curr = head;
+  let prev = null;
+
+  while (m >= 1) {
+    prev = curr;
+    curr = curr.next;
+    m--;
+    n--;
+  }
+  let con = prev;
+  let tail = curr;
+  while (n >= 0) {
+    let nextTemp = curr.next;
+    curr.next = prev;
+    prev = curr;
+    curr = nextTemp;
+    n--;
+  }
+  if (con) {
+    con.next = prev;
+  } else {
+    head = prev;
+  }
+  tail.next = curr;
+  return head;
+}
+```
+
+### Count Continous Sections in Linked List
+
+```javascript
+function linkedListContinous(head, G) {
+  let curr = head;
+  let hashmap = {};
+  let count = 0;
+  for (let i = 0; i < G.length; i++) {
+    hashmap[G[i]] = 1;
+  }
+  let continous = false;
+  while (curr !== null) {
+    let val = curr.val;
+    if (hashmap[val]) {
+      delete hashmap[val];
+      if (continous === false) {
+        count++;
+        continous = true;
+      }
+    } else {
+      continous = false;
+    }
+
+    curr = curr.next;
+  }
+  return count;
+}
+```
+
+### Max Contiguous Sum in Array
+
+```javascript
+function maxContigous(input) {
+  let maxSoFar = input[0];
+  let max = input[0];
+  for (let i = 1; i < input.length; i++) {
+    maxSoFar = Math.max(input[i], input[i] + maxSoFar);
+    max = Math.max(max, maxSoFar);
+  }
+  return max;
+}
+```
+
+### Dependency Graph
+
+```javascript
+function findValidOrder(numCourses, prerequisites) {
+  let prereqGraph = {};
+  let courseDependencyCount = Array(numCourses).fill(0);
+  let queue = [];
+  let order = [];
+
+  //Load the prereqGraph with dependency:course
+  //e.g. '0':['1'],'1':['2']
+  //Load courseDependencyCount with courseDependencyCount per course [i]
+  //e.g. [0,1,1,1,1]
+  prerequisites.forEach(prereq => {
+    const [course, dep] = prereq;
+    if (prereqGraph[dep]) {
+      prereqGraph[dep] = prereqGraph[dep].concat(course);
+    } else {
+      prereqGraph[dep] = [course];
+    }
+    courseDependencyCount[course]++;
+  });
+  //Add courses with 0 dependencies to queue
+  for (let i = 0; i < courseDependencyCount.length; i++) {
+    if (courseDependencyCount[i] == 0) queue.push(i);
+  }
+  //For each item in queue,
+  while (queue.length > 0) {
+    let course = queue.shift();
+    order.push(course);
+    //load dependencies for a course eg '0':['1']
+    let dependencies = prereqGraph[course];
+    if (dependencies) {
+      //Decrement dep count for ['1'], if left with 0 add to queue
+      dependencies.forEach(dep => {
+        courseDependencyCount[dep]--;
+        if (courseDependencyCount[dep] == 0) queue.push(dep);
+      });
+    }
+  }
+  //Check for 0s in courseDependencyCount, if none true
+  for (let i = 0; i < courseDependencyCount.length; i++) {
+    if (courseDependencyCount[i] !== 0) return [];
+  }
+  return order;
+}
+```
+
+### Buy and Sell Stock
+
+```javascript
+const input = [2, 1, 4, 6, 3];
+function maxProfit(prices) {
+  if (input.length == 0) return 0;
+  let min;
+  let max;
+  let maxDiff = 0;
+  for (let i = 0; i < prices.length; i++) {
+    const price = prices[i];
+    //If no min set min & max to price
+    if (min == undefined) min = max = price;
+    //If price lower than min, reset min/max
+    if (price < min) min = max = price;
+    //If price more than max, set as new max
+    if (price > max) max = price;
+
+    //If diff is greater than current, set as new max diff
+    const diff = price - min;
+    if (diff > maxDiff) maxDiff = diff;
+  }
+  return maxDiff;
+}
+```
+
+### Depth First Search
+
+Number of distinct items in a 2D grid
+
+```javascript
+function numIslands(grid) {
+  let count = 0;
+  let height = grid.length;
+  let length = grid[0].length;
+
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < length; x++) {
+      if (grid[y][x] == '0') continue;
+      dfs(x, y);
+      count++;
+    }
+  }
+  return count;
+  function dfs(x, y) {
+    if (x < 0 || y < 0 || x == length || y == height) return;
+    if (grid[y][x] == '0') return;
+    grid[y][x] = '0';
+
+    dfs(x - 1, y);
+    dfs(x + 1, y);
+    dfs(x, y - 1);
+    dfs(x, y + 1);
+  }
+}
+```
+
+### Breadth First Search
+
+```javascript
+function cloneGraph(node) {
+  let map = new Map();
+  function recursiveTraverse(node) {
+    if (map.has(node.val)) {
+      return map.get(node.val);
+    }
+    let clonedNeighbors = [];
+    let clonedNode = new Node(node.val, clonedNeighbors);
+    map.set(node.val, clonedNode);
+    for (let i = 0; i < node.neighbors.length; i++) {
+      clonedNeighbors.push(recursiveTraverse(node.neighbors[i]));
+    }
+    return clonedNode;
+  }
+  return recursiveTraverse(node);
+}
+```
+
+### Sliding Window
+
+```javascript
+var maxSumTwoNoOverlap = function(A, L, M) {
+  function maxSum(L, M) {
+    let maxSum = 0;
+    let i = 0;
+    let j = A.length - L;
+    //Sliding window, break out of inner when they hit
+    for (let i = 0; i < A.length; i++) {
+      let flag = false;
+      for (let j = A.length - L; j >= 0; j--) {
+        if (i + M > A.length || i + M > j) {
+          flag = true;
+          break;
+        }
+        sum = A.slice(i, i + M)
+          .concat(A.slice(j, j + L))
+          .reduce((sum, val) => sum + val);
+        if (sum > maxSum) maxSum = sum;
+      }
+      if (flag) continue;
+    }
+    return maxSum;
+  }
+  //Swap the order of the sliding windows, to check both sides
+  return Math.max(maxSum(L, M), maxSum(M, L));
+};
+```
+
+### Array Manipulation
+
+```javascript
+function findMostFreqInt(input) {
+  let hashmap = {};
+  let max = 0;
+  let mostFreq;
+  for (let i = 0; i < input.length; i++) {
+    const num = input[i];
+    if (hashmap[num]) {
+      hashmap[num]++;
+    } else {
+      hashmap[num] = 1;
+    }
+    if (hashmap[num] > max) {
+      max = hashmap[num];
+      mostFreq = num;
+    }
+  }
+  return mostFreq;
 }
 ```
