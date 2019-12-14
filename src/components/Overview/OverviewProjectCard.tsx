@@ -15,7 +15,8 @@ export interface IProps {
 const OverviewProjectCard: React.SFC<IProps> = (props: IProps) => (
   <div className='overview-project-card'>
     <a className='overview-project-card-title' href={props.href}>
-      {props.title}
+      <h4>{props.title}</h4>
+
     </a>
     <div className='overview-project-card-shields'>
       {props.shield && <img src={props.shield} />}

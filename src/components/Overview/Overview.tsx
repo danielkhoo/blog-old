@@ -1,7 +1,4 @@
-import { Link } from 'gatsby';
 import React from 'react';
-import './Overview.scss';
-import OverviewProjectCard from './OverviewProjectCard';
 
 enum ActiveTab {
   About = 'About',

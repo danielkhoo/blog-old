@@ -14,8 +14,7 @@ export default function Template({
       <div className='blog'>
         <div className='blog-post-title'>
           <h1>{frontmatter.title} </h1>
-          <h4>{frontmatter.date}</h4>
-          <hr />
+          {frontmatter.date ? <h4>{frontmatter.date}</h4> : <></>}
         </div>
         <div className='blog-post-content' dangerouslySetInnerHTML={{ __html: html }} />
       </div>

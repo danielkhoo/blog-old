@@ -1,28 +1,104 @@
 .blog {
-  // font-family: "Lato"; // display: flex;
-  color: rgba(0, 0, 0, 0.84);
   font-family: Georgia, 'Times New Roman', Times, serif;
+  color: rgba(0, 0, 0, 0.84);
   font-style: normal;
-  // flex-wrap: wrap;
-  .blog-post {
-    padding: 10px 20px;
-    // flex: 1 1 40%;
-    // border: 1px solid #d1d5da;
-    // border-radius: 3px;
-    // margin: 8px;
-    // padding: 16px;
+  margin-bottom: 30px;
 
+  .blog-post {
     &-title {
       margin-bottom: 30px;
+      h1 {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 32px;
+        font-weight: normal;
+      }
+
       h4 {
+        font-size: 14px;
         color: #757575;
         margin: 5px;
       }
     }
     &-content {
       p {
-        font-size: 19px;
+        font-size: 17px;
         line-height: 1.8em;
+      }
+    }
+  }
+}
+
+.overview-projects {
+  display: flex;
+  flex-wrap: wrap;
+
+  .overview-project-card {
+    flex: 1 1 40%;
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
+    margin: 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &-title {
+      font-weight: 600;
+    }
+
+    &-shields {
+      margin: 10px 0 5px;
+    }
+
+    &-content {
+      display: flex;
+      justify-content: flex-start;
+
+      .tags {
+        .tag-icon {
+          display: flex;
+          margin-right: 8px;
+        }
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+      }
+      .language-color {
+        border-radius: 50%;
+        display: inline-block;
+        height: 12px;
+        position: relative;
+        top: 1px;
+        width: 12px;
+      }
+    }
+  }
+}
+
+.overview-blog {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  .overview-blog-card {
+    flex: 1 1 40%;
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
+    margin: 8px;
+
+    &-header {
+      border-bottom: 1px solid #d1d5da;
+      padding: 5px 15px;
+      font-size: 12px;
+      span {
+        font-weight: 600;
+      }
+    }
+
+    &-content {
+      padding: 16px;
+      .title {
+        margin: 5px 0 15px;
       }
     }
   }
