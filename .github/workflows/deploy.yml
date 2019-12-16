@@ -24,8 +24,9 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git commit -m "Build artifacts"
-        git remote add origin https://x-access-token:$GITHUB_TOKEN@github.com/danielkhoo/danielkhoo.github.io.git
-        git push origin master --force
+        github_repo="https://x-access-token:$GITHUB_TOKEN@github.com/danielkhoo/danielkhoo.github.io.git"
+        echo $github_repo
+        git push --force $github_repo
         
         
         
