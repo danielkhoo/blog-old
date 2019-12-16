@@ -24,7 +24,8 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git commit -m "Build artifacts"
-        git status
+        git remote add origin https://x-access-token:$GITHUB_TOKEN@github.com/danielkhoo/danielkhoo.github.io.git
+        
         
         
         
