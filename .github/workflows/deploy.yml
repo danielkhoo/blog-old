@@ -11,9 +11,9 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       run: |
-        git clone https://x-access-token:$GITHUB_TOKEN@github.com/danielkhoo/danielkhoo.github.io.git
+        git clone https://$ACCESS_TOKEN@github.com/danielkhoo/danielkhoo.github.io.git
         cd danielkhoo.github.io
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
