@@ -13,6 +13,8 @@ jobs:
       run: |
         git clone https://danielkhoo:$GITHUB_TOKEN@github.com/danielkhoo/danielkhoo.github.io.git
         cd danielkhoo.github.io
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
         git status
         touch test.txt
         git add .
