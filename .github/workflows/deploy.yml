@@ -10,19 +10,22 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build
+      run: |
+        npm install
+        npm run build
+        
+    - name: Deploy
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       run: |
-        git clone https://$ACCESS_TOKEN@github.com/danielkhoo/danielkhoo.github.io.git
-        cd danielkhoo.github.io
+        cd ${{ github.workspace }}/public
+        git init
+        git add .
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git status
-        touch test.txt
-        git add .
-        git commit -m "test"
-        git status
-        git push
+        git commit -m "Build artifacts"
+        git remote add origin https://$ACCESS_TOKEN@github.com/danielkhoo/danielkhoo.github.io.git
+        git push --set-upstream origin master --force
         
         
         
