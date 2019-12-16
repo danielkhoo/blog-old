@@ -26,6 +26,7 @@ jobs:
         git commit -m "Build artifacts"
         github_repo="https://x-access-token:$GITHUB_TOKEN@github.com/danielkhoo/danielkhoo.github.io.git"
         echo $github_repo
+        git push --set-upstream $github_repo master
         git push --force $github_repo
         
         
