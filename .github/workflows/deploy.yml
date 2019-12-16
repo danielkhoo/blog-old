@@ -10,6 +10,8 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git clone https://x-access-token:$GITHUB_TOKEN@github.com/danielkhoo/danielkhoo.github.io.git
         cd danielkhoo.github.io
