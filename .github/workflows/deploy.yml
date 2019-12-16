@@ -24,10 +24,9 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git commit -m "Build artifacts"
-        github_repo="https://x-access-token:$GITHUB_TOKEN@github.com/danielkhoo/danielkhoo.github.io.git"
+        github_repo="https://danielkhoo:$GITHUB_TOKEN@github.com/danielkhoo/danielkhoo.github.io.git"
         echo $github_repo
-        git push --set-upstream $github_repo master
-        git push --force $github_repo
+        git push --set-upstream $github_repo master --force
         
         
         
