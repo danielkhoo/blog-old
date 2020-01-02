@@ -7,10 +7,6 @@ phases:
     commands:
       - echo "installing dependencies"
       - npm install
-  pre_build:
-    commands:
-      - echo "Clear S3 bucket"
-      - aws s3 rm --recursive "s3://${ARTIFACTS_BUCKET}/"
   build:
     commands:
       - echo "building"
