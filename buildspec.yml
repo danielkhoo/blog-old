@@ -15,4 +15,7 @@ phases:
     commands:
       - echo "creating artifact"
 artifacts:
-  files: public/*
+  files:
+    - './**/*'
+  base-directory: public
+  name: websitename
