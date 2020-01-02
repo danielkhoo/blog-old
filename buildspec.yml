@@ -6,11 +6,11 @@ phases:
       nodejs: 10
     commands:
       - echo "installing dependencies"
-    #   - npm install
+      - npm install
   build:
     commands:
       - echo "building"
-    #   - npm run build
+      - npm run build
   post_build:
     commands:
       - echo "Clear S3 bucket"
