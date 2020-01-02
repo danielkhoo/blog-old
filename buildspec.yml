@@ -6,16 +6,16 @@ phases:
       nodejs: 10
     commands:
       - echo "installing dependencies"
-      - npm install
+    #   - npm install
   build:
     commands:
       - echo "building"
-      - npm run build
+    #   - npm run build
   post_build:
     commands:
-      - echo "creating artifact"
+      - echo "Clear S3 bucket"
+      - aws s3 rm --recursive "s3://${ARTIFACTS_BUCKET}/"
 artifacts:
   files:
     - './**/*'
   base-directory: public
-  name: websitename
