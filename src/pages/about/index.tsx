@@ -1,7 +1,6 @@
 import React from 'react';
 import Layout from '../../components/layout';
 import SEO from '../../components/seo';
-import OverviewBlogCard from '../../components/Overview/OverviewBlogCard';
 // @ts-ignore: SVG Import
 import githubSVG from '../../images/github.svg';
 import Icon from '../../components/Icon';
