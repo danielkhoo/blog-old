@@ -17,8 +17,8 @@ const IndexPage = ({ data }) => {
   })
 
   return (
-    <Layout showSideBar={true}>
-      <SEO title="Home" />
+    <Layout>
+      <SEO title="Blog" />
       <div className='overview-blog'>
         {posts.map((post) =>
           <OverviewBlogCard

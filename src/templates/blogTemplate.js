@@ -9,7 +9,7 @@ export default function Template({
   const { markdownRemark } = data; // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark;
   return (
-    <Layout showSideBar={false}>
+    <Layout>
       <SEO title='Home' />
       <div className='blog'>
         <div className='blog-post-title'>
