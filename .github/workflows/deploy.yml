@@ -1,0 +1,27 @@
+name: CI - Build and Deploy to Github Pages Repo
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Deploy
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        run: |
+          cd ${{ github.workspace }}/public
+          git init
+          git add .
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "Build artifacts"
+          git remote add origin https://$ACCESS_TOKEN@github.com/danielkhoo/danielkhoo.github.io.git
+          git push --set-upstream origin master --force
