@@ -5,17 +5,18 @@ title: 'Being the new guy'
 description: 'It's been 3 months since I started my first full-time job as a software engineer. I wanted a snapshot of my thoughts and impressions from this point in time.'
 ---
 
-It's been 3 months since I started my first full-time job as a software engineer. 
+It's been 3 months since I started my first full-time job as a software engineer.
 
 I wanted a snapshot of my thoughts and impressions from this point in time. That way someday in the future I can look back at the naive, fresh-faced new engineer and laugh.
 
 ## Impressions
 
-The sheer breadth of knowledge required to operate as a full-stack engineer is staggering. Frontend, backend, infra. React, NEXT, Express, Travis, AWS. I felt like I had a decent working knowledge of all them but it was still overwhelming. 
+The sheer breadth of knowledge required to operate as a full-stack engineer is staggering. Frontend, backend, infra. React, NEXT, Express, Travis, AWS. I felt like I had a decent working knowledge of all them but it was still overwhelming.
 
-Working from home has some downsides. The work day doesn't quite *start* or *end*. It's a challenge being able to walk away from incomplete work. It's like a video game, you don't want to quit until you solve it. I'm working on having a more rigid routine and office hours.
+Working from home has some downsides. The work day doesn't quite _start_ or _end_. It's a challenge being able to walk away from incomplete work. It's like a video game, you don't want to quit until you solve it. I'm working on having a more rigid routine and office hours.
 
 ## What I've learnt
+
 ### 1. Infra
 
 I thought I'd have a decent headstart having just picked up my AWS Certification. But holy shit working with production systems is really different. There no clean slate, you have to worry about downtime, migrations, snapshots. So much of the knowledge is implicit: how to search CloudWatch logs, configuring security groups and using jumphosts. I've gone from being super unsure of what I'm doing to just minor self-doubt, which is nice.
