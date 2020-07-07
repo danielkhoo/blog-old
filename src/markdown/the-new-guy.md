@@ -2,7 +2,7 @@
 path: '/blog/the-new-guy'
 date: '2020-05-10'
 title: 'Being the new guy'
-description: 'I`m 3 months into my first full-time job as a software engineer. I wanted a snapshot of my thoughts and impressions at this specific point in time for future reference.'
+description: 'I`m 4 months into my first full-time job as a software engineer. I wanted a snapshot of my thoughts and impressions at this specific point in time for future reference.'
 ---
 
 It's been 3 months since I started my first full-time job as a software engineer.
