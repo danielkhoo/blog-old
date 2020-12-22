@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "export": "next build && next export",
+    "postexport": "echo \"danieljkhoo.com\" > out/CNAME && echo \"\" > out/.nojekyll",
     "run-static": "cd out && npx http-server",
     "start": "next start"
   },
