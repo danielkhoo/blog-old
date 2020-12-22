@@ -1,53 +1,25 @@
 {
-  "name": "blog",
-  "description": "Personal Blog - Gatsby",
-  "version": "1.0.0",
-  "author": "Daniel Khoo",
-  "dependencies": {
-    "gatsby": "^2.13.39",
-    "gatsby-image": "^2.2.6",
-    "gatsby-plugin-manifest": "^2.2.4",
-    "gatsby-plugin-offline": "^2.2.4",
-    "gatsby-plugin-react-helmet": "^3.1.2",
-    "gatsby-plugin-react-svg": "^2.1.1",
-    "gatsby-plugin-sass": "^2.3.1",
-    "gatsby-plugin-sharp": "^2.2.9",
-    "gatsby-plugin-typescript": "^2.1.2",
-    "gatsby-remark-images": "^3.1.38",
-    "gatsby-remark-prismjs": "^3.3.25",
-    "gatsby-source-filesystem": "^2.1.7",
-    "gatsby-transformer-remark": "^2.6.39",
-    "gatsby-transformer-sharp": "^2.2.4",
-    "node-sass": "^4.12.0",
-    "prismjs": "^1.17.1",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1",
-    "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.87.3"
-  },
-  "devDependencies": {
-    "gh-pages": "^2.0.1",
-    "prettier": "^1.18.2",
-    "tailwindcss": "^1.4.6"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
+  "name": "my-project",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "deploy": "gatsby build && cd public && git add . && git commit -m 'deploy' && git push",
-    "build": "gatsby build",
-    "postbuild": "echo \"danieljkhoo.com\" > public/CNAME",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next build && next export",
+    "run-static": "cd out && npx http-server",
+    "start": "next start"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/danielkhoo/danielkhoo.github.io"
+  "dependencies": {
+    "autoprefixer": "^10.1.0",
+    "date-fns": "2.10.0",
+    "gray-matter": "^4.0.2",
+    "next": "10.0.3",
+    "postcss": "^8.2.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "remark": "11.0.2",
+    "remark-html": "10.0.0",
+    "remark-prism": "^1.3.3",
+    "tailwindcss": "^2.0.2"
   }
 }

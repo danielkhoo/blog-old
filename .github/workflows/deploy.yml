@@ -11,13 +11,13 @@ jobs:
       - name: Build
         run: |
           npm ci
-          npm run build
+          npm run export
 
       - name: Deploy
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
-          cd ${{ github.workspace }}/public
+          cd ${{ github.workspace }}/out
           git init
           git add .
           git config --local user.email "action@github.com"
