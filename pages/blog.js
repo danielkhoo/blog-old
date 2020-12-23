@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import Navigation from '../Components/navigation'
 import Layout from '../Components/layout'
@@ -9,7 +8,6 @@ export default function Blog(props) {
   return (
     <Layout>
       <Navigation selected='/blog' />
-      <Head><title>daniel - blog</title></Head>
       <main className={"flex mx-6 my-24 items-center"}>
 
         <div className={''}>
