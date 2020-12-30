@@ -1,4 +1,4 @@
-const colors = require('tailwindcss/colors')
+const colors = require('tailwindcss/colors');
 
 module.exports = {
   purge: [],
@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     screens: {
       sm: '640px',
-      md: '768px',
+      md: '700px',
       lg: '1024px',
       xl: '1280px',
       '2xl': '1536px',
@@ -15,10 +15,10 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-
-      black: '#020202',
+      black: '#0e1e25',
       white: colors.white,
-      gray: '#AFAFAF',
+      gray: '#3e4b51',
+      lightgray: '#7d8589',
       red: colors.red,
       yellow: colors.amber,
       green: colors.emerald,
@@ -27,7 +27,7 @@ module.exports = {
       purple: colors.violet,
       pink: colors.pink,
 
-      primary: '#4183C4'
+      primary: '#4183C4',
     },
     spacing: {
       px: '1px',
@@ -857,4 +857,4 @@ module.exports = {
     zIndex: ['responsive', 'focus-within', 'focus'],
   },
   plugins: [],
-}
+};

@@ -7,10 +7,10 @@
     @apply text-3xl;
   }
   h2 {
-    @apply text-xl my-4 font-medium;
+    @apply text-lg my-4 font-medium text-black;
   }
   h3 {
-    @apply text-lg my-2 font-medium;
+    @apply text-md my-1 font-medium text-black;
   }
   p {
     @apply my-6;

@@ -9,7 +9,7 @@ export default function Home() {
         <div className={'text-lg flex-3'}>
           <p>Hello there, I’m Daniel.
           Welcome to my online home for ideas, writing and side projects
-            <br /><br /><em>“Art is never finished, only abandoned.” Leonardo Da Vinci</em>
+            <br /><br /><em className={'text-lightgray'}>“Art is never finished, only abandoned.” Leonardo Da Vinci</em>
           </p>
         </div>
         <div className={'my-16 flex-2'}>

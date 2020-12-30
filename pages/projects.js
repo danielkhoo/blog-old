@@ -51,10 +51,10 @@ export default function Projects(props) {
 
 const ProjectItem = ({ type, title, tags, url, children }) => {
   return <div className={'my-8 flex items-center'}>
-    <span className={'text-md text-gray w-2/12'}>{type}</span>
+    <span className={'text-md text-lightgray w-2/12'}>{type}</span>
     <div className={'ml-4 w-10/12'}>
       <Link href={url}><a className={'text-lg text-black no-underline hover:text-primary'}>{title}</a></Link>
-      <span className={'ml-4 text-base text-gray'}>{tags}</span>
+      <span className={'ml-4 text-base text-lightgray'}>{tags}</span>
       <div>
         {children}
       </div>
