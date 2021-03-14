@@ -26,7 +26,7 @@ export default function Post({ post }) {
 
           <h1>{post.title}</h1>
         </div>
-        <div className={"text-lg"} dangerouslySetInnerHTML={{ __html: post.content }}
+        <div className={"text-md"} dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </main>
     </Layout>
