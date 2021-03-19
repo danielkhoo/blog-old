@@ -1,0 +1,30 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next build && next export",
+    "postexport": "echo \"danieljkhoo.com\" > out/CNAME && echo \"\" > out/.nojekyll",
+    "run-static": "cd out && npx http-server",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "^1.0.0",
+    "@chakra-ui/react": "1.1.2",
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
+    "framer-motion": "^2.9.4",
+    "next": "10.0.3",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "autoprefixer": "^10.1.0",
+    "date-fns": "2.10.0",
+    "gray-matter": "^4.0.2",
+    "remark": "11.0.2",
+    "remark-html": "10.0.0",
+    "remark-prism": "^1.3.3"
+  },
+  "license": "MIT"
+}
