@@ -22,7 +22,12 @@ export default function Post({ post }) {
 
           <h1>{post.title}</h1>
         </div>
+<<<<<<< HEAD
         <div className={'text-md text-gray p-2'} dangerouslySetInnerHTML={{ __html: post.content }} />
+=======
+        <div className={"text-md"} dangerouslySetInnerHTML={{ __html: post.content }}
+        />
+>>>>>>> ae65839ca8ae4cd80fe421cf96e0d0c2ed72fc66
       </main>
     </Layout>
   );

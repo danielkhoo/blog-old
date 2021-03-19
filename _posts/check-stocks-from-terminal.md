@@ -18,7 +18,7 @@ In this case, I found myself checking the prices of stocks whenever I had to wai
 
 > ## _"Wouldn't it be cool see prices in the terminal?"_
 
-It would need to be ashort, memorable 1 line command that could be invoked anytime. The idea was simple, an npx-able module to fetch prices.
+It would need to be a short, memorable 1 line command that could be invoked anytime. The idea was simple, an npx-able module to fetch prices.
 
 ## Demo
 
@@ -37,5 +37,3 @@ It even supports multiple tickers, so you can monitor your whole portfolio
 ## Wrap
 
 See the code on [github](https://github.com/danielkhoo/stonk). All the module does is make a call to the Yahoo Finance API for your ticker symbol. It returns a bunch more stuff like trading volume, high, low and indicators. But for simplicity we display just a single price.
-
-> ## _Diamond hands 💎 ✋ 💎 ✋ from our terminals 🚀🚀🚀_

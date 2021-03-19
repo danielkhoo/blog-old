@@ -24,7 +24,7 @@ I thought I'd have a decent headstart having just picked up my AWS Certification
 
 ### 2. Working remote
 
-Nothing like starting a new job in the middle of freaking pandemic to teach remote work. The importance of writing Pull Requests are magnified when you can't talk face to face with other people. Diagrams have been a real lifesaver, especially once i started using [Excalidraw](https://excalidraw.com/).
+Nothing like starting a new job in the middle of a pandemic to teach remote work. The importance of writing Pull Requests are magnified when you can't talk face to face with other people. Diagrams have been a real lifesaver, especially once i started using [Excalidraw](https://excalidraw.com/).
 
 ### 3. Random bits of knowledge
 
