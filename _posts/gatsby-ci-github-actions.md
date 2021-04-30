@@ -12,17 +12,17 @@ For the longest time, ever since I first learned about Github Actions, I've want
 
 The idea is simple yet beautiful.
 
-1. Edit Markdown
-2. Commit
-3. _Magic_
+Step 1: Edit Markdown
+
+Step 2: Commit
+
+Step 3: _Magic_
 
 Gatsby build already deploys static files, so the only real challenge is pushing it to the github.io repo. Of course the lazy way is simply to git init in the directory, set origin and _**FORCE PUSH!!!!**_.
 
 ```bash
 "deploy": "gatsby build && cd public && git add . && git commit -m 'deploy' && git push --force"
 ```
-
-_*Obi wan has taught me well*_
 
 ## The Fancy Way
 
