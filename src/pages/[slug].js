@@ -1,22 +1,23 @@
 import { getPostBySlug, getAllPosts } from '../lib/api';
-import {
-  Link,
-  Text,
-  Flex,
-  Box,
-} from '@chakra-ui/react'
+import { Link, Text, Flex, Box } from '@chakra-ui/react';
 import markdownToHtml from '../lib/markdownToHtml';
 import { parseISO, format } from 'date-fns';
-import Navigation from '../components/Navigation'
+import Navigation from '../components/Navigation';
 import { Container } from '../components/Container';
+import Head from 'next/head';
 
 export default function Post({ post }) {
   return (
     <Container>
-      <Navigation selected='/blog' />
+      <Head>
+        <title>{post.title}</title>
+      </Head>
+      <Navigation selected="/blog" />
       <Flex marginX="24px" flexDirection="column">
         <Box marginY="24px">
-          <h3><DateFormatter dateString={post.date} /></h3>
+          <h3>
+            <DateFormatter dateString={post.date} />
+          </h3>
           <h1>{post.title}</h1>
         </Box>
         <div dangerouslySetInnerHTML={{ __html: post.content }} />
