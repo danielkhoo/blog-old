@@ -48,31 +48,11 @@ And you should see the custom snippet json with an example snippet commented out
 
 Here you can add your snippet following the example syntax for tab stops and cursor position. Here’s the example for my fat console log.
 
-```javascript
-"Fat Console Log": {
-    "prefix": "clgf",
-    "body": [
-        "console.log('\\n\\n\\nhellothere\\n',$1,'\\n\\n\\n');",
-	"$2"
-    ],
-    "description": "Fat Console Log"
-},
-```
+<script src="https://gist.github.com/danielkhoo/0d1a2682f7416d098ebc3420d5e212ca.js"></script>
 
 Here’s another example for generating arrow functions.
 
-```javascript
-"Arrow Function": {
-    "prefix": "arfn",
-    "body": [
-        "const $1 = () => {",
-            "return ",
-        "};",
-        "$2"
-    ],
-    "description": "Arrow Function"
-}
-```
+<script src="https://gist.github.com/danielkhoo/ee1d56523f91b944b4276ece0dd9ef40.js"></script>
 
 <figure>
   <img src="./add-snippets-to-vscode/ss6.png">
