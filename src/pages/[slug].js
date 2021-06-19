@@ -1,5 +1,5 @@
 import { getPostBySlug, getAllPosts } from '../lib/api';
-import { Link, Text, Flex, Box } from '@chakra-ui/react';
+import { Flex, Box } from '@chakra-ui/react';
 import markdownToHtml from '../lib/markdownToHtml';
 import { parseISO, format } from 'date-fns';
 import Navigation from '../components/Navigation';
