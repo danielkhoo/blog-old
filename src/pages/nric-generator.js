@@ -25,7 +25,7 @@ const Index = (props) => {
   };
 
   const handleCopy = () => {
-    onCopy;
+    onCopy();
     toast({
       title: 'Copied',
       status: 'info',
