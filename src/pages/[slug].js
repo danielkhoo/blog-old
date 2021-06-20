@@ -4,14 +4,12 @@ import markdownToHtml from '../lib/markdownToHtml';
 import { parseISO, format } from 'date-fns';
 import Navigation from '../components/Navigation';
 import { Container } from '../components/Container';
-import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 
 export default function Post({ post }) {
   return (
     <Container>
-      <Head>
-        <title>{post.title}</title>
-      </Head>
+      <NextSeo title={post.title} description={post.description} />
       <Navigation selected="/blog" />
       <Flex marginX="24px" flexDirection="column">
         <Box marginY="24px">
@@ -27,7 +25,14 @@ export default function Post({ post }) {
 }
 
 export async function getStaticProps({ params }) {
-  const post = getPostBySlug(params.slug, ['title', 'date', 'slug', 'author', 'content']);
+  const post = getPostBySlug(params.slug, [
+    'title',
+    'date',
+    'description',
+    'slug',
+    'author',
+    'content',
+  ]);
   const content = await markdownToHtml(post.content || '');
 
   return {
