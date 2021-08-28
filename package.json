@@ -21,7 +21,7 @@
     "file-saver": "^2.0.5",
     "framer-motion": "^2.9.4",
     "gray-matter": "^4.0.2",
-    "next": "^10.2.3",
+    "next": "^11.1.0",
     "next-seo": "^4.26.0",
     "nric": "^1.2.0",
     "prismjs": "^1.23.0",
