@@ -2,3 +2,5 @@
 [[redirects]]
   from = "https://dev.danieljkhoo.com"
   to = "https://github.com/danielkhoo"
+  status = 301
+  force = true
