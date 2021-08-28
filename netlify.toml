@@ -1,0 +1,4 @@
+# A basic redirect rule
+[[redirects]]
+  from = "https://dev.danieljkhoo.com"
+  to = "https://github.com/danielkhoo"
