@@ -1,6 +1,13 @@
-# A basic redirect rule
+# Github
 [[redirects]]
   from = "https://dev.danieljkhoo.com"
   to = "https://github.com/danielkhoo"
+  status = 301
+  force = true
+
+# Medium
+[[redirects]]
+  from = "https://blog.danieljkhoo.com"
+  to = "https://medium.com/@danieljkhoo"
   status = 301
   force = true
